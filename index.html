@@ -18,18 +18,18 @@
     --accent-purple: #8E44AD;
     --accent-orange: #E67E22;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: 'Nunito', sans-serif;
     background: var(--light);
     color: var(--text);
     overflow-x: hidden;
   }
-
+ 
   /* ─── NAVBAR ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -54,7 +54,7 @@
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--gold); }
-
+ 
   /* ─── HERO ─── */
   #hero {
     min-height: 100vh;
@@ -137,7 +137,7 @@
     border-bottom: 2px solid var(--gold);
     transform: rotate(45deg);
   }
-
+ 
   /* ─── SECTIONS ─── */
   section { padding: 5rem 2rem; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -158,7 +158,7 @@
     margin-bottom: 1rem;
   }
   .section-title em { color: var(--mid-blue); font-style: normal; }
-
+ 
   /* ─── INTRO ─── */
   #intro { background: var(--cream); }
   .intro-card {
@@ -190,7 +190,7 @@
   .tag-blue { background: rgba(45,74,138,0.4); color: #7ab3ff; border: 1px solid rgba(45,74,138,0.6); }
   .tag-gold { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
   .tag-red { background: rgba(192,57,43,0.2); color: #e88080; border: 1px solid rgba(192,57,43,0.4); }
-
+ 
   /* ─── OBJECTIVES ─── */
   #objetivos { background: var(--light); }
   .obj-grid {
@@ -217,7 +217,7 @@
     color: var(--dark-blue);
   }
   .obj-card p { font-size: 0.87rem; color: #555; line-height: 1.6; }
-
+ 
   /* ─── TIMELINE ─── */
   #linea { background: var(--dark-blue); color: #fff; }
   #linea .section-title { color: #fff; }
@@ -278,7 +278,7 @@
     display: block; margin-bottom: 0.3rem;
   }
   .tl-activity p { font-size: 0.83rem; color: rgba(255,255,255,0.7); }
-
+ 
   /* ─── PERSONAJES ─── */
   #personajes { background: var(--cream); }
   .personas-grid {
@@ -319,7 +319,7 @@
   .p3::after { background: var(--accent-purple); }
   .p4::after { background: var(--red); }
   .p5::after { background: var(--accent-green); }
-
+ 
   /* ─── CONSTITUCIONES ─── */
   #constituciones { background: var(--light); }
   .const-grid {
@@ -342,7 +342,7 @@
   }
   .const-card h3 { font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
   .const-card p { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
-
+ 
   /* ─── DATOS DESTACADOS ─── */
   #datos { background: linear-gradient(135deg, var(--dark-blue), #1a3a6e); color: #fff; }
   #datos .section-title { color: #fff; }
@@ -368,7 +368,7 @@
   }
   .dato-card p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; line-height: 1.5; }
   .dato-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
-
+ 
   /* ─── RECURSOS ─── */
   #recursos { background: var(--cream); }
   .recursos-cols {
@@ -392,7 +392,7 @@
   }
   .recurso-list li:last-child { border-bottom: none; }
   .recurso-list li .ri { font-size: 1rem; flex-shrink: 0; }
-
+ 
   /* ─── EVALUACIÓN ─── */
   #evaluacion { background: var(--light); }
   .eval-grid {
@@ -419,7 +419,7 @@
   .pct-purple { background: rgba(142,68,173,0.1); color: var(--accent-purple); }
   .eval-info h4 { font-size: 0.9rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 0.2rem; }
   .eval-info p { font-size: 0.78rem; color: #666; }
-
+ 
   /* ─── GAME ZONE ─── */
   #juego {
     background: linear-gradient(135deg, #0d1b3e 0%, #1f3a6e 50%, #0d1b3e 100%);
@@ -466,7 +466,7 @@
     width: 100%; height: 100%;
     border: none;
   }
-
+ 
   /* ─── FOOTER ─── */
   footer {
     background: var(--dark-blue);
@@ -475,7 +475,7 @@
     font-size: 0.8rem; letter-spacing: 1px;
   }
   footer span { color: var(--gold); }
-
+ 
   /* ─── ANIMATIONS ─── */
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
@@ -501,7 +501,7 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
-
+ 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -513,7 +513,72 @@
 </style>
 </head>
 <body>
-
+ 
+<!-- PORTADA -->
+<div id="portada" style="
+  position:fixed; inset:0; z-index:9999;
+  background: linear-gradient(160deg, #0a1128 0%, #1A2744 45%, #2D4A8A 80%, #0a1128 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+">
+  <div style="position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, rgba(201,168,76,0.13) 0%, transparent 65%);pointer-events:none;"></div>
+ 
+  <div style="font-size:4.5rem;margin-bottom:1.5rem;animation:fadeDown 0.8s ease both;">🇨🇴</div>
+  <div style="width:60px;height:3px;background:#C9A84C;border-radius:3px;margin-bottom:1.8rem;animation:fadeDown 0.8s 0.1s ease both;"></div>
+ 
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,7vw,5.5rem);color:#fff;line-height:0.95;letter-spacing:3px;animation:fadeDown 0.9s 0.15s ease both;max-width:700px;">
+    FORMACIÓN DEL<br><span style="color:#C9A84C;">ESTADO</span><br>COLOMBIANO
+  </h1>
+ 
+  <div style="width:80px;height:2px;background:rgba(201,168,76,0.4);border-radius:3px;margin:1.8rem 0;animation:fadeDown 0.9s 0.25s ease both;"></div>
+ 
+  <div style="animation:fadeDown 1s 0.35s ease both;margin-bottom:2rem;">
+    <p style="font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:rgba(201,168,76,0.7);margin-bottom:1rem;">Integrantes</p>
+    <div style="display:flex;flex-direction:column;gap:0.4rem;">
+      <p style="font-size:clamp(0.85rem,2vw,1rem);color:rgba(255,255,255,0.9);font-weight:700;">José Alejandro Arbeláez Galeano</p>
+      <p style="font-size:clamp(0.85rem,2vw,1rem);color:rgba(255,255,255,0.9);font-weight:700;">Danna Paola Camargo Mendoza</p>
+      <p style="font-size:clamp(0.85rem,2vw,1rem);color:rgba(255,255,255,0.9);font-weight:700;">Samir David González González</p>
+    </div>
+  </div>
+ 
+  <div style="animation:fadeDown 1s 0.45s ease both;margin-bottom:2.5rem;">
+    <p style="font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:rgba(201,168,76,0.7);margin-bottom:0.4rem;">Docente</p>
+    <p style="font-size:clamp(0.85rem,2vw,1rem);color:rgba(255,255,255,0.85);font-weight:600;">Luis Alberto Buelvas Cogollo</p>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.45);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:0.3rem;">Mediación Tecnológica</p>
+  </div>
+ 
+  <button onclick="cerrarPortada()" style="
+    animation:fadeDown 1s 0.6s ease both;
+    background:#C9A84C;color:#0a1128;
+    border:none;border-radius:50px;
+    padding:0.9rem 2.5rem;
+    font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:900;
+    text-transform:uppercase;letter-spacing:2px;
+    cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;
+    box-shadow:0 6px 25px rgba(201,168,76,0.35);
+  "
+  onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 10px 35px rgba(201,168,76,0.5)'"
+  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 6px 25px rgba(201,168,76,0.35)'"
+  >▶ &nbsp;Entrar al contenido</button>
+ 
+  <p style="margin-top:2rem;font-size:0.68rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;animation:fadeDown 1s 0.7s ease both;">
+    Ciencias Sociales · Grado 9°
+  </p>
+</div>
+ 
+<script>
+  function cerrarPortada() {
+    const p = document.getElementById('portada');
+    p.style.opacity = '0';
+    p.style.transform = 'scale(1.04)';
+    document.body.style.overflow = 'auto';
+    setTimeout(() => p.style.display = 'none', 800);
+  }
+  document.body.style.overflow = 'hidden';
+</script>
+ 
 <!-- NAVBAR -->
 <nav>
   <div class="nav-logo">Estado 🇨🇴</div>
@@ -526,14 +591,16 @@
     <li><a href="#datos">Datos</a></li>
     <li><a href="#juego">🎮 Juego</a></li>
     <li><a href="#evaluacion">Evaluación</a></li>
+    <li><a href="#video">📹 Video</a></li>
+    <li><a href="#bibliografia">Bibliografía</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
-  <div class="hero-badge">📚 Ciencias Sociales · Grado 9° · Plan Académico 2024</div>
+  <div class="hero-badge">📚 Ciencias Sociales</div>
   <h1 class="hero-title">Formación del<br><span>Estado</span><br>Colombiano</h1>
   <p class="hero-subtitle">De colonia a nación: un siglo de construcción marcado por federalismo, centralismo, guerras civiles y múltiples constituciones. <strong style="color:rgba(255,255,255,0.9)">1810 – 1902.</strong></p>
   <div class="hero-stats">
@@ -559,7 +626,7 @@
     <span class="scroll-arrow"></span>
   </div>
 </section>
-
+ 
 <!-- INTRODUCCIÓN -->
 <section id="intro">
   <div class="section-inner">
@@ -578,7 +645,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- OBJETIVOS -->
 <section id="objetivos">
   <div class="section-inner">
@@ -608,14 +675,14 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- LÍNEA DE TIEMPO -->
 <section id="linea">
   <div class="section-inner">
     <div class="section-label">Cronología</div>
     <h2 class="section-title">Línea de <em>Tiempo Temática</em></h2>
     <div class="timeline">
-
+ 
       <div class="tl-item" data-delay="0">
         <div class="tl-dot"></div>
         <div class="tl-period">1810 – 1819</div>
@@ -634,7 +701,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="tl-item" data-delay="100">
         <div class="tl-dot"></div>
         <div class="tl-period">1819 – 1830</div>
@@ -653,7 +720,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="tl-item" data-delay="200">
         <div class="tl-dot"></div>
         <div class="tl-period">1830 – 1858</div>
@@ -672,7 +739,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="tl-item" data-delay="300">
         <div class="tl-dot"></div>
         <div class="tl-period">1858 – 1886</div>
@@ -691,7 +758,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="tl-item" data-delay="400">
         <div class="tl-dot"></div>
         <div class="tl-period">1886 – 1900</div>
@@ -710,7 +777,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="tl-item" data-delay="500">
         <div class="tl-dot"></div>
         <div class="tl-period">1899 – 1902</div>
@@ -729,11 +796,11 @@
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- PERSONAJES CLAVE -->
 <section id="personajes">
   <div class="section-inner">
@@ -773,7 +840,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONSTITUCIONES -->
 <section id="constituciones">
   <div class="section-inner">
@@ -808,7 +875,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- DATOS DESTACADOS -->
 <section id="datos">
   <div class="section-inner">
@@ -848,7 +915,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ZONA DE JUEGO -->
 <section id="juego">
   <div class="section-inner">
@@ -874,7 +941,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- RECURSOS -->
 <section id="recursos">
   <div class="section-inner">
@@ -914,7 +981,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- EVALUACIÓN -->
 <section id="evaluacion">
   <div class="section-inner">
@@ -959,13 +1026,58 @@
     </div>
   </div>
 </section>
-
+ 
+<!-- VIDEO -->
+<section id="video" style="background: var(--dark-blue); color:#fff; padding: 5rem 2rem;">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold);">Recurso Audiovisual</div>
+    <h2 class="section-title" style="color:#fff;">Video <em>Educativo</em></h2>
+    <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; margin: 0.75rem 0 2rem; max-width:620px; line-height:1.7;">
+      Mira este video explicativo sobre el nacimiento de las constituciones de Colombia a lo largo de la historia. Ideal para reforzar lo aprendido.
+    </p>
+    <div style="max-width:820px; margin:0 auto; border-radius:16px; overflow:hidden; border:1px solid rgba(201,168,76,0.25); box-shadow:0 20px 50px rgba(0,0,0,0.4);">
+      <div style="background:rgba(201,168,76,0.1); padding:0.9rem 1.4rem; display:flex; align-items:center; gap:0.75rem; border-bottom:1px solid rgba(201,168,76,0.2);">
+        <span style="font-size:1.1rem;">▶️</span>
+        <span style="font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:var(--gold);">MacroALIANZA · Constituciones de Colombia</span>
+      </div>
+      <div style="position:relative; width:100%; padding-bottom:56.25%;">
+        <iframe
+          src="https://www.youtube.com/embed/vhemNUbqkmo"
+          title="Como NACEN las 10 Constituciones de Colombia"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          loading="lazy"
+          style="position:absolute; inset:0; width:100%; height:100%; border:none;"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- BIBLIOGRAFÍA -->
+<section id="bibliografia" style="background:var(--cream); padding: 5rem 2rem;">
+  <div class="section-inner">
+    <div class="section-label">Fuentes</div>
+    <h2 class="section-title">Biblio<em>grafía</em></h2>
+    <div style="margin-top:2rem; background:#fff; border-radius:16px; padding:2rem 2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-left:4px solid var(--gold);">
+      <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:var(--gold); margin-bottom:1.2rem;">Referencias</p>
+      <div style="display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; border-bottom:1px solid #f0f0f0;">
+        <span style="font-size:1.4rem; flex-shrink:0; margin-top:2px;">🎬</span>
+        <p style="font-size:0.92rem; color:#333; line-height:1.7; font-family:'Nunito', sans-serif;">
+          MacroALIANZA. (2019, junio 28). <em>Como NACEN las 10 Constituciones de Colombia (1810-1821-1853-1863-1886-1991)</em>. YouTube.
+          <a href="https://www.youtube.com/watch?v=vhemNUbqkmo" target="_blank" style="color:var(--mid-blue); font-weight:700; margin-left:0.3rem; word-break:break-all;">https://www.youtube.com/watch?v=vhemNUbqkmo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <!-- FOOTER -->
 <footer>
   <p>🇨🇴 <span>Ciencias Sociales · Grado 9°</span> · Formación del Estado Colombiano · Siglo XIX · <span>Plan Académico 2024</span></p>
   <p style="margin-top:0.5rem; font-size:0.72rem; opacity:0.5">Historia · Política · Territorio · Pensamiento Crítico</p>
 </footer>
-
+ 
 <script>
 // ── Intersection Observer for scroll animations ──
 const observer = new IntersectionObserver((entries) => {
@@ -978,11 +1090,11 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
-
+ 
 document.querySelectorAll('.obj-card, .tl-item, .persona-card, .const-card, .dato-card, .eval-card').forEach(el => {
   observer.observe(el);
 });
-
+ 
 // ── Counter animation ──
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
@@ -996,7 +1108,7 @@ function animateCounter(el) {
     if (current >= target) clearInterval(timer);
   }, 35);
 }
-
+ 
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1005,9 +1117,9 @@ const counterObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.5 });
-
+ 
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-
+ 
 // ── Active nav link highlight ──
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
