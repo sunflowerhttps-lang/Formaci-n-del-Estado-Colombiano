@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formación del Estado Colombiano · Grado 9°</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --dark-blue: #1A2744;
+    --mid-blue: #2D4A8A;
+    --red: #C0392B;
+    --cream: #F5F0E8;
+    --light: #FAFAF7;
+    --text: #1A1A2E;
+    --accent-green: #27AE60;
+    --accent-purple: #8E44AD;
+    --accent-orange: #E67E22;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(26,39,68,0.96);
+    backdrop-filter: blur(12px);
+    padding: 0.8rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; letter-spacing: 2px;
+    color: var(--gold);
+  }
+  .nav-links {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none; font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0D1B3E 0%, #1A2744 40%, #2D4A8A 80%, #1a3a5c 100%);
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 6rem 2rem 4rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(192,57,43,0.10) 0%, transparent 40%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 0.4rem 1.2rem; border-radius: 50px;
+    margin-bottom: 1.5rem;
+    animation: fadeDown 0.8s ease both;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.9;
+    color: #fff;
+    letter-spacing: 2px;
+    animation: fadeDown 0.9s 0.1s ease both;
+  }
+  .hero-title span { color: var(--gold); }
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.7);
+    max-width: 600px; margin: 1.5rem auto 0;
+    font-weight: 600; line-height: 1.6;
+    animation: fadeDown 1s 0.2s ease both;
+  }
+  .hero-stats {
+    display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+    margin-top: 3rem;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 12px; padding: 1rem 1.5rem;
+    text-align: center; min-width: 100px;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .hero-stat:hover { transform: translateY(-4px); background: rgba(201,168,76,0.12); }
+  .hero-stat .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem; color: var(--gold);
+    display: block;
+  }
+  .hero-stat .label {
+    font-size: 0.65rem; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
+  }
+  .scroll-cta {
+    margin-top: 3rem;
+    animation: bounce 2s infinite;
+    color: rgba(255,255,255,0.5); font-size: 0.8rem;
+    letter-spacing: 2px; text-transform: uppercase; font-weight: 700;
+  }
+  .scroll-arrow {
+    display: block; margin: 0.5rem auto 0;
+    width: 20px; height: 20px;
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 24px; height: 2px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-title em { color: var(--mid-blue); font-style: normal; }
+
+  /* ─── INTRO ─── */
+  #intro { background: var(--cream); }
+  .intro-card {
+    background: var(--dark-blue);
+    border-radius: 20px; padding: 3rem;
+    color: #fff; position: relative; overflow: hidden;
+    margin-top: 2.5rem;
+  }
+  .intro-card::before {
+    content: '1810–1902';
+    position: absolute; right: -10px; top: -20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem; color: rgba(201,168,76,0.07);
+    letter-spacing: -5px; pointer-events: none;
+  }
+  .intro-card p {
+    font-size: 1.1rem; line-height: 1.8; max-width: 720px;
+    color: rgba(255,255,255,0.85);
+  }
+  .intro-card p strong { color: var(--gold); }
+  .intro-tags {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem;
+  }
+  .tag {
+    padding: 0.3rem 1rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .tag-blue { background: rgba(45,74,138,0.4); color: #7ab3ff; border: 1px solid rgba(45,74,138,0.6); }
+  .tag-gold { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+  .tag-red { background: rgba(192,57,43,0.2); color: #e88080; border: 1px solid rgba(192,57,43,0.4); }
+
+  /* ─── OBJECTIVES ─── */
+  #objetivos { background: var(--light); }
+  .obj-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .obj-card {
+    background: #fff;
+    border-radius: 16px; padding: 2rem 1.5rem;
+    border-top: 4px solid transparent;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; transform: translateY(30px);
+  }
+  .obj-card.visible { animation: slideUp 0.6s ease forwards; }
+  .obj-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+  .obj-card:nth-child(1) { border-color: var(--mid-blue); }
+  .obj-card:nth-child(2) { border-color: var(--accent-green); }
+  .obj-card:nth-child(3) { border-color: var(--red); }
+  .obj-card:nth-child(4) { border-color: var(--accent-purple); }
+  .obj-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .obj-card h3 {
+    font-size: 1rem; font-weight: 800; margin-bottom: 0.5rem;
+    color: var(--dark-blue);
+  }
+  .obj-card p { font-size: 0.87rem; color: #555; line-height: 1.6; }
+
+  /* ─── TIMELINE ─── */
+  #linea { background: var(--dark-blue); color: #fff; }
+  #linea .section-title { color: #fff; }
+  #linea .section-title em { color: var(--gold); }
+  .timeline {
+    position: relative; margin-top: 3rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 16px; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(to bottom, var(--gold), var(--mid-blue));
+    border-radius: 3px;
+  }
+  .tl-item {
+    position: relative; padding: 0 0 3rem 2.5rem;
+    opacity: 0; transform: translateX(-20px);
+  }
+  .tl-item.visible { animation: slideRight 0.6s ease forwards; }
+  .tl-dot {
+    position: absolute; left: -2px; top: 4px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--dark-blue);
+    box-shadow: 0 0 0 3px var(--gold);
+  }
+  .tl-period {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .tl-subtitle {
+    font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 700; margin-bottom: 1rem;
+  }
+  .tl-content {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 1.5rem;
+    transition: background 0.3s;
+  }
+  .tl-content:hover { background: rgba(201,168,76,0.08); }
+  .tl-ideas { list-style: none; margin-bottom: 1rem; }
+  .tl-ideas li {
+    font-size: 0.88rem; padding: 0.35rem 0;
+    color: rgba(255,255,255,0.8);
+    display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+  .tl-ideas li::before { content: '▸'; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+  .tl-activity {
+    background: rgba(201,168,76,0.1); border-radius: 10px;
+    padding: 0.75rem 1rem; margin-top: 0.75rem;
+  }
+  .tl-activity span {
+    font-size: 0.72rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold);
+    display: block; margin-bottom: 0.3rem;
+  }
+  .tl-activity p { font-size: 0.83rem; color: rgba(255,255,255,0.7); }
+
+  /* ─── PERSONAJES ─── */
+  #personajes { background: var(--cream); }
+  .personas-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .persona-card {
+    background: #fff; border-radius: 16px; padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; transform: translateY(30px);
+    position: relative; overflow: hidden;
+  }
+  .persona-card.visible { animation: slideUp 0.6s ease forwards; }
+  .persona-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  .persona-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    border: 3px solid var(--gold);
+  }
+  .persona-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--dark-blue); }
+  .persona-role {
+    font-size: 0.72rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 0.3rem 0;
+  }
+  .persona-card p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+  .persona-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .p1::after { background: var(--gold); }
+  .p2::after { background: var(--mid-blue); }
+  .p3::after { background: var(--accent-purple); }
+  .p4::after { background: var(--red); }
+  .p5::after { background: var(--accent-green); }
+
+  /* ─── CONSTITUCIONES ─── */
+  #constituciones { background: var(--light); }
+  .const-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin-top: 2.5rem;
+  }
+  .const-card {
+    background: var(--dark-blue); border-radius: 14px;
+    padding: 1.5rem; color: #fff;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s; cursor: default;
+    opacity: 0;
+  }
+  .const-card.visible { animation: slideUp 0.6s ease forwards; }
+  .const-card:hover { transform: scale(1.03); }
+  .const-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: var(--gold);
+    line-height: 1; margin-bottom: 0.5rem;
+  }
+  .const-card h3 { font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+  .const-card p { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  /* ─── DATOS DESTACADOS ─── */
+  #datos { background: linear-gradient(135deg, var(--dark-blue), #1a3a6e); color: #fff; }
+  #datos .section-title { color: #fff; }
+  #datos .section-title em { color: var(--gold); }
+  .datos-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .dato-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px; padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    opacity: 0;
+  }
+  .dato-card.visible { animation: slideUp 0.7s ease forwards; }
+  .dato-card:hover { transform: translateY(-5px); background: rgba(201,168,76,0.1); }
+  .dato-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: var(--gold);
+    display: block; line-height: 1;
+  }
+  .dato-card p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; line-height: 1.5; }
+  .dato-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+
+  /* ─── RECURSOS ─── */
+  #recursos { background: var(--cream); }
+  .recursos-cols {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; margin-top: 2.5rem;
+  }
+  .recurso-block {
+    background: #fff; border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .recurso-block h3 {
+    font-size: 0.8rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--gold); margin-bottom: 1.2rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .recurso-list { list-style: none; }
+  .recurso-list li {
+    font-size: 0.87rem; color: #444; padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+  .recurso-list li:last-child { border-bottom: none; }
+  .recurso-list li .ri { font-size: 1rem; flex-shrink: 0; }
+
+  /* ─── EVALUACIÓN ─── */
+  #evaluacion { background: var(--light); }
+  .eval-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .eval-card {
+    background: #fff; border-radius: 14px; padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    display: flex; align-items: center; gap: 1.2rem;
+    opacity: 0;
+  }
+  .eval-card.visible { animation: slideUp 0.6s ease forwards; }
+  .eval-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem; min-width: 64px; text-align: center;
+    border-radius: 10px; padding: 0.5rem;
+    line-height: 1;
+  }
+  .pct-blue { background: rgba(45,74,138,0.1); color: var(--mid-blue); }
+  .pct-gold { background: rgba(201,168,76,0.15); color: #9a7a1f; }
+  .pct-red { background: rgba(192,57,43,0.1); color: var(--red); }
+  .pct-green { background: rgba(39,174,96,0.1); color: var(--accent-green); }
+  .pct-purple { background: rgba(142,68,173,0.1); color: var(--accent-purple); }
+  .eval-info h4 { font-size: 0.9rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 0.2rem; }
+  .eval-info p { font-size: 0.78rem; color: #666; }
+
+  /* ─── GAME ZONE ─── */
+  #juego {
+    background: linear-gradient(135deg, #0d1b3e 0%, #1f3a6e 50%, #0d1b3e 100%);
+    color: #fff; padding: 5rem 2rem;
+  }
+  #juego .section-title { color: #fff; }
+  #juego .section-title em { color: var(--gold); }
+  .game-intro {
+    max-width: 600px; margin: 1rem 0 2.5rem;
+    font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+  }
+  .game-wrapper {
+    max-width: 900px; margin: 0 auto;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 20px; overflow: hidden;
+    position: relative;
+  }
+  .game-header {
+    background: rgba(201,168,76,0.12);
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .game-header span {
+    font-weight: 800; font-size: 0.85rem;
+    color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px;
+  }
+  .btn-fullscreen {
+    background: var(--gold); color: var(--dark-blue);
+    border: none; border-radius: 8px; padding: 0.4rem 1rem;
+    font-weight: 800; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 1px;
+    cursor: pointer; text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-fullscreen:hover { transform: scale(1.05); background: #dfc062; }
+  .game-frame-container {
+    position: relative; width: 100%;
+    padding-bottom: 62%;
+  }
+  .game-frame-container iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark-blue);
+    color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem;
+    font-size: 0.8rem; letter-spacing: 1px;
+  }
+  footer span { color: var(--gold); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes countUp {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 1rem; }
+    .timeline { padding-left: 1.5rem; }
+    .tl-item { padding-left: 1.8rem; }
+    .game-frame-container { padding-bottom: 75%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">Estado 🇨🇴</div>
+  <ul class="nav-links">
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#objetivos">Objetivos</a></li>
+    <li><a href="#linea">Línea de Tiempo</a></li>
+    <li><a href="#personajes">Personajes</a></li>
+    <li><a href="#constituciones">Constituciones</a></li>
+    <li><a href="#datos">Datos</a></li>
+    <li><a href="#juego">🎮 Juego</a></li>
+    <li><a href="#evaluacion">Evaluación</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-badge">📚 Ciencias Sociales · Grado 9° · Plan Académico 2024</div>
+  <h1 class="hero-title">Formación del<br><span>Estado</span><br>Colombiano</h1>
+  <p class="hero-subtitle">De colonia a nación: un siglo de construcción marcado por federalismo, centralismo, guerras civiles y múltiples constituciones. <strong style="color:rgba(255,255,255,0.9)">1810 – 1902.</strong></p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num" data-target="6">0</span>
+      <span class="label">Constituciones</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num" data-target="9">0</span>
+      <span class="label">Estados Federales</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num" data-target="8" data-prefix="+">0</span>
+      <span class="label">Guerras Civiles</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num" data-target="92">0</span>
+      <span class="label">Años de Historia</span>
+    </div>
+  </div>
+  <div class="scroll-cta">
+    Explorar
+    <span class="scroll-arrow"></span>
+  </div>
+</section>
+
+<!-- INTRODUCCIÓN -->
+<section id="intro">
+  <div class="section-inner">
+    <div class="section-label">Idea Central</div>
+    <h2 class="section-title">De Colonia a <em>Nación</em></h2>
+    <div class="intro-card">
+      <p>Colombia transitó de un territorio colonial fragmentado a un <strong>Estado-nación soberano</strong>. El camino estuvo marcado por tensiones entre <strong>Federalismo y Centralismo</strong>, guerras civiles, múltiples constituciones y la búsqueda de instituciones republicanas estables.</p>
+      <p style="margin-top:1rem;">Este proceso histórico de 92 años (1810–1902) define la identidad política, territorial e institucional del país que conocemos hoy. Entender este período es clave para comprender las raíces del <strong>Estado colombiano contemporáneo</strong>.</p>
+      <div class="intro-tags">
+        <span class="tag tag-blue">Historia Política</span>
+        <span class="tag tag-gold">Constituciones</span>
+        <span class="tag tag-blue">Geografía Histórica</span>
+        <span class="tag tag-gold">Pensamiento Crítico</span>
+        <span class="tag tag-red">Guerras Civiles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJETIVOS -->
+<section id="objetivos">
+  <div class="section-inner">
+    <div class="section-label">Para Aprender</div>
+    <h2 class="section-title">Objetivos de <em>Aprendizaje</em></h2>
+    <div class="obj-grid">
+      <div class="obj-card" data-delay="0">
+        <div class="obj-icon">🎯</div>
+        <h3>Comprender el Proceso Histórico</h3>
+        <p>Identificar tensiones políticas, sociales y territoriales del siglo XIX colombiano y su impacto en la formación del Estado.</p>
+      </div>
+      <div class="obj-card" data-delay="100">
+        <div class="obj-icon">📜</div>
+        <h3>Analizar Constituciones</h3>
+        <p>Entender las leyes fundamentales que moldearon las instituciones del país, desde Cúcuta 1821 hasta La Regeneración 1886.</p>
+      </div>
+      <div class="obj-card" data-delay="200">
+        <div class="obj-icon">⚔️</div>
+        <h3>Relacionar Conflictos</h3>
+        <p>Vincular las guerras civiles con la débil consolidación del Estado y sus consecuencias para la unidad nacional.</p>
+      </div>
+      <div class="obj-card" data-delay="300">
+        <div class="obj-icon">🧠</div>
+        <h3>Pensamiento Crítico</h3>
+        <p>Analizar fuentes primarias: constituciones y manifiestos políticos para desarrollar argumentos históricos fundamentados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LÍNEA DE TIEMPO -->
+<section id="linea">
+  <div class="section-inner">
+    <div class="section-label">Cronología</div>
+    <h2 class="section-title">Línea de <em>Tiempo Temática</em></h2>
+    <div class="timeline">
+
+      <div class="tl-item" data-delay="0">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1810 – 1819</div>
+        <div class="tl-subtitle">Legado Colonial & Independencia</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Ruptura del orden español colonial</li>
+            <li>20 de Julio 1810: Grito de Independencia</li>
+            <li>Patria Boba: conflicto entre provincias</li>
+            <li>Primeras constituciones provinciales</li>
+            <li>Campaña Libertadora – Boyacá 1819</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>Lectura del Discurso de Angostura (1819) · Debate: ¿era viable la independencia?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-delay="100">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1819 – 1830</div>
+        <div class="tl-subtitle">La Gran Colombia</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Unión de Venezuela, Colombia y Ecuador</li>
+            <li>Constitución de Cúcuta (1821)</li>
+            <li>Tensiones: centralismo vs. autonomía</li>
+            <li>Disolución en 1830</li>
+            <li>Muerte de Bolívar: legado truncado</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>¿Por qué fracasó la unidad? · Mapa: expansión y disolución de la Gran Colombia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-delay="200">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1830 – 1858</div>
+        <div class="tl-subtitle">República de la Nueva Granada</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Nacimiento del Partido Liberal y Conservador</li>
+            <li>Constituciones: 1832 · 1843 · 1853</li>
+            <li>Abolición de la esclavitud (1851)</li>
+            <li>Ensayos tempranos de federalismo</li>
+            <li>Pugnas entre caudillos regionales</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>Comparar 4 constituciones (1832–1858) · Línea de tiempo Liberales vs. Conservadores</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-delay="300">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1858 – 1886</div>
+        <div class="tl-subtitle">Estado Federal</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Confederación Granadina (1858)</li>
+            <li>EE.UU. de Colombia (1863)</li>
+            <li>Constitución de Rionegro: máximo federalismo</li>
+            <li>9 estados soberanos y autónomos</li>
+            <li>Hegemonía Liberal Radical</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>Simulación: Federalismo vs. Centralismo · Role-Play congreso del siglo XIX</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-delay="400">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1886 – 1900</div>
+        <div class="tl-subtitle">La Regeneración</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Constitución de 1886 (vigente hasta 1991)</li>
+            <li>República centralizada y unitaria</li>
+            <li>Concordato: poder de la Iglesia Católica</li>
+            <li>Rafael Núñez: "Regeneración o catástrofe"</li>
+            <li>Bipartidismo Lib–Con consolidado</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>Análisis artículos clave de la Constitución 1886 · Debate: ¿fue positiva la Regeneración?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-delay="500">
+        <div class="tl-dot"></div>
+        <div class="tl-period">1899 – 1902</div>
+        <div class="tl-subtitle">Guerra de los Mil Días</div>
+        <div class="tl-content">
+          <ul class="tl-ideas">
+            <li>Última gran guerra civil del siglo XIX</li>
+            <li>Liberales vs. gobierno Conservador</li>
+            <li>~100.000 muertos · devastación económica</li>
+            <li>Separación de Panamá (1903)</li>
+            <li>Crisis final del Estado decimonónico</li>
+          </ul>
+          <div class="tl-activity">
+            <span>🎓 Actividad</span>
+            <p>Crear periódico mural histórico · Debate: ¿pudo evitarse la guerra?</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAJES CLAVE -->
+<section id="personajes">
+  <div class="section-inner">
+    <div class="section-label">Protagonistas</div>
+    <h2 class="section-title">Personajes <em>Clave</em> del Siglo XIX</h2>
+    <div class="personas-grid">
+      <div class="persona-card p1" data-delay="0">
+        <div class="persona-avatar" style="background:#fff8e6;">⚔️</div>
+        <h3>Simón Bolívar</h3>
+        <p class="persona-role" style="color:var(--gold);">El Libertador</p>
+        <p>Independencia · 1819. Líder de la Gran Colombia y visionario de la unidad latinoamericana.</p>
+      </div>
+      <div class="persona-card p2" data-delay="100">
+        <div class="persona-avatar" style="background:#eef2ff;">📋</div>
+        <h3>Fco. de P. Santander</h3>
+        <p class="persona-role" style="color:var(--mid-blue);">Hombre de las Leyes</p>
+        <p>Nueva Granada. Fundador del constitucionalismo en Colombia y primer presidente de la república.</p>
+      </div>
+      <div class="persona-card p3" data-delay="200">
+        <div class="persona-avatar" style="background:#f5eeff;">🏛️</div>
+        <h3>T. C. de Mosquera</h3>
+        <p class="persona-role" style="color:var(--accent-purple);">Federalismo</p>
+        <p>Constitución de Rionegro 1863. Promovió el federalismo radical y la separación Iglesia–Estado.</p>
+      </div>
+      <div class="persona-card p4" data-delay="300">
+        <div class="persona-avatar" style="background:#ffeee8;">✍️</div>
+        <h3>Rafael Núñez</h3>
+        <p class="persona-role" style="color:var(--red);">La Regeneración</p>
+        <p>Presidente · Constitución 1886. Impulsó la centralización y el Concordato con la Iglesia.</p>
+      </div>
+      <div class="persona-card p5" data-delay="400">
+        <div class="persona-avatar" style="background:#eaffed;">🎖️</div>
+        <h3>Rafael Reyes</h3>
+        <p class="persona-role" style="color:var(--accent-green);">Post-guerra</p>
+        <p>Quinquenio · 1900s. Lideró la reconstrucción del país tras la Guerra de los Mil Días.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTITUCIONES -->
+<section id="constituciones">
+  <div class="section-inner">
+    <div class="section-label">Marco Legal</div>
+    <h2 class="section-title">Constituciones del <em>Siglo XIX</em></h2>
+    <div class="const-grid">
+      <div class="const-card" data-delay="0">
+        <div class="const-year">1821</div>
+        <h3>Cúcuta · Gran Colombia</h3>
+        <p>Bolívar presidente. Unidad continental de Venezuela, Colombia y Ecuador. Primer gran pacto republicano.</p>
+      </div>
+      <div class="const-card" data-delay="100">
+        <div class="const-year">1832</div>
+        <h3>Nueva Granada</h3>
+        <p>1ª república independiente. Santander como referente. Base del constitucionalismo neogranadino.</p>
+      </div>
+      <div class="const-card" data-delay="150">
+        <div class="const-year">1853</div>
+        <h3>Liberal Radical</h3>
+        <p>Sufragio universal masculino. Separación Iglesia–Estado. Avance democrático significativo.</p>
+      </div>
+      <div class="const-card" data-delay="200">
+        <div class="const-year">1863</div>
+        <h3>Rionegro</h3>
+        <p>Máximo federalismo. 9 estados soberanos y autónomos. EE.UU. de Colombia.</p>
+      </div>
+      <div class="const-card" data-delay="300">
+        <div class="const-year">1886</div>
+        <h3>La Regeneración</h3>
+        <p>Centralismo · Concordato. Rigió hasta 1991. Rafael Núñez y el bipartidismo consolidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATOS DESTACADOS -->
+<section id="datos">
+  <div class="section-inner">
+    <div class="section-label">Cifras Impactantes</div>
+    <h2 class="section-title">Datos que <em>Debes Saber</em></h2>
+    <div class="datos-grid">
+      <div class="dato-card" data-delay="0">
+        <span class="dato-icon">📜</span>
+        <span class="dato-num" data-target="6">0</span>
+        <p>Constituciones promulgadas durante el siglo XIX colombiano</p>
+      </div>
+      <div class="dato-card" data-delay="100">
+        <span class="dato-icon">🗺️</span>
+        <span class="dato-num" data-target="9">0</span>
+        <p>Estados soberanos bajo la Constitución Federal de Rionegro (1863)</p>
+      </div>
+      <div class="dato-card" data-delay="200">
+        <span class="dato-icon">⚔️</span>
+        <span class="dato-num" data-target="8" data-prefix="+">0</span>
+        <p>Guerras civiles que sacudieron el territorio colombiano en el siglo XIX</p>
+      </div>
+      <div class="dato-card" data-delay="300">
+        <span class="dato-icon">💀</span>
+        <span class="dato-num" data-target="100" data-suffix="K">0</span>
+        <p>Muertos estimados en la Guerra de los Mil Días (1899–1902)</p>
+      </div>
+      <div class="dato-card" data-delay="400">
+        <span class="dato-icon">📅</span>
+        <span class="dato-num" data-target="105">0</span>
+        <p>Años vigente la Constitución de 1886 (hasta la Constitución de 1991)</p>
+      </div>
+      <div class="dato-card" data-delay="500">
+        <span class="dato-icon">🌎</span>
+        <span class="dato-num" data-target="3">0</span>
+        <p>Países que conformaron la Gran Colombia: Venezuela, Colombia y Ecuador</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONA DE JUEGO -->
+<section id="juego">
+  <div class="section-inner">
+    <div class="section-label">🎮 Interactividad</div>
+    <h2 class="section-title">Aprende <em>Jugando</em></h2>
+    <p class="game-intro">
+      Pon a prueba tus conocimientos sobre la Formación del Estado Colombiano con esta actividad interactiva. Responde preguntas, completa retos y demuestra que dominás el siglo XIX colombiano. ¡A jugar!
+    </p>
+    <div class="game-wrapper">
+      <div class="game-header">
+        <span>🕹️ Zona Interactiva · Historia Colombia</span>
+        <a class="btn-fullscreen" href="https://unverisdaddecordoba.h5p.com/content/1292910271954380868" target="_blank">⛶ Pantalla Completa</a>
+      </div>
+      <div class="game-frame-container">
+        <iframe
+          src="https://unverisdaddecordoba.h5p.com/content/1292910271954380868/embed"
+          allowfullscreen
+          allow="autoplay; fullscreen"
+          loading="lazy"
+          title="Juego interactivo: Formación del Estado Colombiano"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECURSOS -->
+<section id="recursos">
+  <div class="section-inner">
+    <div class="section-label">Herramientas</div>
+    <h2 class="section-title">Recursos & <em>Estrategias</em></h2>
+    <div class="recursos-cols">
+      <div class="recurso-block">
+        <h3>📚 Recursos Pedagógicos</h3>
+        <ul class="recurso-list">
+          <li><span class="ri">📄</span><span><strong>Textos Primarios:</strong> Constituciones 1832·1853·1863·1886, Discurso de Angostura</span></li>
+          <li><span class="ri">🗺️</span><span><strong>Mapas Históricos:</strong> Evolución territorial Gran Colombia → Pérdida de Panamá</span></li>
+          <li><span class="ri">🎬</span><span><strong>Videos:</strong> Canal Señal Memoria · Banco de la República</span></li>
+          <li><span class="ri">💻</span><span><strong>Digital:</strong> TimelineJS · Google Classroom · Padlet</span></li>
+          <li><span class="ri">👤</span><span><strong>Personajes Clave:</strong> Bolívar · Santander · Mosquera · Núñez · Reyes</span></li>
+        </ul>
+      </div>
+      <div class="recurso-block">
+        <h3>✅ Estrategias Didácticas</h3>
+        <ul class="recurso-list">
+          <li><span class="ri">❓</span><span><strong>ABP:</strong> ¿Cómo gobernar sin comunicaciones rápidas?</span></li>
+          <li><span class="ri">🎭</span><span><strong>Role-Playing:</strong> Simulación de congresos del siglo XIX</span></li>
+          <li><span class="ri">⏳</span><span><strong>Pensamiento Histórico:</strong> Causalidad múltiple, cambio y continuidad</span></li>
+          <li><span class="ri">👥</span><span><strong>Trabajo Cooperativo:</strong> Equipos exponen cada constitución</span></li>
+          <li><span class="ri">📖</span><span><strong>Fuentes Adaptadas:</strong> Vocabulario glosado para grado 9°</span></li>
+        </ul>
+      </div>
+      <div class="recurso-block">
+        <h3>⭐ Actividades Principales</h3>
+        <ul class="recurso-list">
+          <li><span class="ri">💬</span><span><strong>Debate Angostura:</strong> ¿Era viable la Gran Colombia?</span></li>
+          <li><span class="ri">📊</span><span><strong>Línea de Tiempo:</strong> Comparativa constituciones 1832–1858</span></li>
+          <li><span class="ri">🏛️</span><span><strong>Simulación Congreso:</strong> Federalismo vs. Centralismo</span></li>
+          <li><span class="ri">📰</span><span><strong>Periódico Mural:</strong> Guerra de los Mil Días</span></li>
+          <li><span class="ri">✍️</span><span><strong>Ensayo Final:</strong> ¿Por qué el siglo XIX fue un siglo de inestabilidad?</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUACIÓN -->
+<section id="evaluacion">
+  <div class="section-inner">
+    <div class="section-label">Calificaciones</div>
+    <h2 class="section-title">Sistema de <em>Evaluación</em></h2>
+    <div class="eval-grid">
+      <div class="eval-card" data-delay="0">
+        <div class="eval-pct pct-blue">20%</div>
+        <div class="eval-info">
+          <h4>Comprensión del Proceso Histórico</h4>
+          <p>Línea de tiempo comparativa (individual)</p>
+        </div>
+      </div>
+      <div class="eval-card" data-delay="100">
+        <div class="eval-pct pct-gold">25%</div>
+        <div class="eval-info">
+          <h4>Análisis de Fuentes Primarias</h4>
+          <p>Debate simulado + bitácora de reflexión</p>
+        </div>
+      </div>
+      <div class="eval-card" data-delay="200">
+        <div class="eval-pct pct-red">25%</div>
+        <div class="eval-info">
+          <h4>Capacidad Argumentativa</h4>
+          <p>Ensayo final: inestabilidad del Estado</p>
+        </div>
+      </div>
+      <div class="eval-card" data-delay="300">
+        <div class="eval-pct pct-green">15%</div>
+        <div class="eval-info">
+          <h4>Participación Colaborativa</h4>
+          <p>Rúbrica de coevaluación grupal</p>
+        </div>
+      </div>
+      <div class="eval-card" data-delay="400">
+        <div class="eval-pct pct-purple">15%</div>
+        <div class="eval-info">
+          <h4>Apropiación Conceptual</h4>
+          <p>Quiz: opción múltiple y Verdadero/Falso</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🇨🇴 <span>Ciencias Sociales · Grado 9°</span> · Formación del Estado Colombiano · Siglo XIX · <span>Plan Académico 2024</span></p>
+  <p style="margin-top:0.5rem; font-size:0.72rem; opacity:0.5">Historia · Política · Territorio · Pensamiento Crítico</p>
+</footer>
+
+<script>
+// ── Intersection Observer for scroll animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = el.dataset.delay || 0;
+      setTimeout(() => el.classList.add('visible'), parseInt(delay));
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.obj-card, .tl-item, .persona-card, .const-card, .dato-card, .eval-card').forEach(el => {
+  observer.observe(el);
+});
+
+// ── Counter animation ──
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = prefix + current + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 35);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── Active nav link highlight ──
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--gold)' : 'rgba(255,255,255,0.7)';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
